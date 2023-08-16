@@ -1,3 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+.searchh{
+  border-radius: 50px;
+  width: 80%;
+  padding: 11px 30px 11px 30px;
+  background: #000;
+  box-shadow:  0 0 10px 5px #FFCE33,
+  0 0 20px 7px rgb(131, 131, 40);
+  font-size: 18px;
+  outline: none;
+  border: none;
+  font-family: 'Signika Negative', sans-serif;;
+}
 
 .text-muted {
   color: #000000 !important;
@@ -68,8 +81,8 @@
   transition: background-color 300ms ease-in-out;
 }
 
-.card:hover .card-body {
-  background-color: hsla(0, 0%, 18%, 0.982);
+.card:hover {
+  background-color: hsla(0, 0%, 8%, 0.982);
 }
 .navbar-dark .navbar-brand {
   color: #000000 !important;
@@ -79,4 +92,6 @@
 }
 .home{
   color: #000000 !important;
+  font-family: 'Signika Negative', sans-serif;
+  margin: 0 0 0 1rem;
 }

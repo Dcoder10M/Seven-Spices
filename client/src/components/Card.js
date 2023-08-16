@@ -50,14 +50,15 @@ export default function Card(props) {
 
   let finalPrice = qty * parseInt(options[size]);   
   return (
-    <div>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <div className="card mt-3" style={{ width: '100%', maxWidth: '18rem', maxHeight: '360px' }}>
+    <div >
+      <div style={{ display: 'flex', justifyContent: 'center',margin:"0px 0px 40px 0px" }}>
+        <div className="card mt-3" style={{ width: '100%', maxWidth: '18rem', maxHeight: '360px',boxShadow: "0 0 10px 1px #FFCE33 "}}>
           <img src={props.foodItem.img} className="card-img-top " alt="..." style={{ height: "150px", objectFit: "cover" }} />
           <div className="card-body card-hover">
-            <h5 className="card-title">{props.foodItem.name}</h5>
-            <div className="container w-100 ">
-              <select className="m-2 h-100 bg-success rounded" onChange={(e) => setQty(e.target.value)}>
+            <h5 className="card-title" >{props.foodItem.name}</h5>
+            <hr />
+            <div className=" w-100 ">
+              <select className="m-2 h-100 rounded" onChange={(e) => setQty(e.target.value)} style={{outline:"none",border:"none",backgroundColor:"#046007"}}>
                 {Array.from(Array(6), (e, i) => {
                   return (
                     <option key={i + 1} value={i + 1}>
@@ -68,7 +69,7 @@ export default function Card(props) {
               </select>
 
 {/* //given price ref */}
-              <select className="m-2 h-100 bg-success rounded" ref={priceRef} onChange={(e) => setSize(e.target.value)}>
+              <select className="m-2 h-100 rounded" ref={priceRef} onChange={(e) => setSize(e.target.value)}style={{outline:"none",border:"none",backgroundColor:"#046007"}}>
                 {priceOptions.map((data) => {
                   return <option key={data} value={data}>{data}</option>;
                 })}
@@ -78,7 +79,7 @@ export default function Card(props) {
             </div>
 
             <hr />
-            <button className="btn btn-success text-white justify-center ms-2" onClick={handleAddToCart}>
+            <button className="btn btn-success text-white justify-center ms-2" onClick={handleAddToCart} style={{outline:"none",border:"none",backgroundColor:"#046007"}}>
               Add to Cart
             </button>
           </div>

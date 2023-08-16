@@ -15,13 +15,12 @@ const handleLogout = ()=>{
   navigate("/login")
 }
 
-//jj
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark navcolor ">
         <div className="container-fluid">
           <Link className="navbar-brand fs-1 fst-italic " to="/">
-            Folapo
+          Seven-Spices
           </Link>
           <button
             className="navbar-toggler"
@@ -37,27 +36,27 @@ const handleLogout = ()=>{
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <Link className="nav-link active fs-5 home" aria-current="page" to="/" >Home</Link>
+                <Link className="nav-link active fs-5 home" aria-current="page" to="/" style={{fontWeight:"bold"}}>Home</Link>
               </li>
               {(localStorage.getItem("authToken")) ?
                 <li className="nav-item">
-                  <Link className="nav-link active fs-5 home" aria-current="page" to="/myOrder">My Orders</Link>
+                  <Link className="nav-link active fs-5 home" aria-current="page" to="/myOrder" style={{fontWeight:"bold"}}>My Orders</Link>
               </li>   
               : ""} 
             </ul>
               {(!localStorage.getItem("authToken")) ?
               <div className="d-flex">
-                 <Link className="btn bg-white text-success mx-1" to="/login">Login</Link>
-                 <Link className="btn bg-white text-success mx-1" to="/createuser">SignUp</Link>
+                 <Link className="btn  mx-2" style={{backgroundColor:"#046007",fontWeight:"bold"}} to="/login">Login</Link>
+                 <Link className="btn bg-white mx-2" style={{color:"#046007",fontWeight:"bold"}} to="/createuser">SignUp</Link>
               </div>
               : 
               <div>
-              <div className="btn bg-white text-success mx-2 " onClick={()=>{setCartView(true)}}>
+              <div className="btn bg-white mx-2" style={{color:"#046007",fontWeight:"bold"}} onClick={()=>{setCartView(true)}}>
                 My Cart {" "}
-                <Badge pill bg="danger" mb-2> {data.length} </Badge>
+                <Badge pill style={{backgroundColor:"#A2FF86",color:"#000"}} mb-2> {data.length} </Badge>
               </div>
                 {cartView? <Modal onClose={()=>setCartView(false)}><Cart /></Modal>: null}
-              <div className="btn bg-white text-danger mx-2 " onClick={handleLogout}>
+              <div className="btn btn-danger mx-2 " style={{backgroundColor:"#ff2d2d",fontWeight:"bold"}} onClick={handleLogout}>
                 Logout 
               </div>
               </div>

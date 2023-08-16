@@ -33,7 +33,7 @@ export default function Cart() {
         order_date: new Date().toDateString()
       })
     });
-    console.log("JSON RESPONSE:::::", response.status)
+    // console.log("JSON RESPONSE:::::", response.status)
     if (response.status === 200) {
       dispatch({ type: "DROP" })
     }
@@ -43,10 +43,10 @@ export default function Cart() {
   return (
     <div >
 
-      {console.log(data)}
+      {/* {console.log(data)} */}
       <div className='container m-auto mt-5 mh-80 table-responsive  table-responsive-sm table-responsive-md'  >
         <table className='table table-hover '>
-          <thead className=' text-success fs-4'>
+          <thead className=' fs-4' style={{color: '#FFCE33'}}>
             <tr>
               <th scope='col' >#</th>
               <th scope='col' >Name</th>
@@ -56,9 +56,9 @@ export default function Cart() {
               <th scope='col' ></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
             {data.map((food, index) => (
-              <tr>
+              <tr >
                 <th scope='row' >{index + 1}</th>
                 <td >{food.name}</td>
                 <td>{food.qty}</td>
@@ -68,9 +68,9 @@ export default function Cart() {
             ))}
           </tbody>
         </table>
-        <div><h1 className='fs-2'>Total Price: {totalPrice}/-</h1></div>
+        <div style={{margin:"60px 0 -40px 0"}}><h1 className='fs-2' >Total Price: {totalPrice}/-</h1></div>
         <div>
-          <button className='btn bg-success mt-5 ' onClick={handleCheckOut} > Check Out </button>
+          <button className='btn mt-5 ' onClick={handleCheckOut} style={{backgroundColor: '#046007',fontWeight:"bold"}}> Check Out </button>
         </div>
       </div>
 

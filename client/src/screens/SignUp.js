@@ -13,14 +13,14 @@ export default function () {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(
-      JSON.stringify({
-        name: credentials.name,
-        email: credentials.email,
-        password: credentials.password,
-        location: credentials.geolocation,
-      })
-    );
+    // console.log(
+    //   JSON.stringify({
+    //     name: credentials.name,
+    //     email: credentials.email,
+    //     password: credentials.password,
+    //     location: credentials.geolocation,
+    //   })
+    // );
     const response = await fetch("http://localhost:5000/api/createuser", {
       method: "POST",
       headers: {
@@ -34,7 +34,7 @@ export default function () {
       }),
     });
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
 
     if (!json.success) {
       alert("Enter Valid Credentials");
@@ -58,12 +58,12 @@ export default function () {
       <div>
         <NavBar />
       </div>
-      <div className="container">
+      <div className="container" >
         <form
-          className="w-50 m-auto mt-5 border bg-dark border-success rounded"
-          onSubmit={handleSubmit}
+          className="w-50 m-auto mt-5"
+          onSubmit={handleSubmit} style={{backgroundColor: '#000',border:"none",outline:"none",padding:"25px",borderRadius: "20px" ,boxShadow:  "0 0 10px 5px #FFCE33,0 0 20px 7px rgb(131, 131, 40)"}}
         >
-          <div className="mb-3 mt-2 mx-3">
+          <div className="mb-3 mt-2 mx-3" >
             <label htmlFor="name" className="form-label">
               Name
             </label>
@@ -120,10 +120,10 @@ export default function () {
             />
           </div>
 
-          <button type="submit" className="m-3 btn btn-success">
+          <button type="submit" className="m-3 btn" style={{backgroundColor:"#046007",fontWeight:"bold"}}>
             Submit
           </button>
-          <Link to="/login" className="m-3 btn btn-danger">
+          <Link to="/login" className="m-3 btn " style={{backgroundColor:"#CB0809",fontWeight:"bold"}}>
             Already a user
           </Link>
         </form>

@@ -22,7 +22,7 @@ switch(action.type){
             return newArr; 
         case "UPDATE":
             let arr = [...state]
-            console.log(arr)
+            // console.log(arr)
             for (let i = 0; i < arr.length; i++) {
                 if(arr[i].id === action.id){
                     arr[i] = { ...arr[i], qty: parseInt(action.qty) + arr[i].qty, price: action.price + arr[i].price }
@@ -37,13 +37,13 @@ switch(action.type){
             //     }
             //     return arr
             // })
-            console.log(arr)
+            // console.log(arr)
             return arr
         case "DROP":
             let empArray = []
             return empArray
         default:
-            console.log("Error in reducer");
+            // console.log("Error in reducer");
 }
 }
 //children matlb sab kuch.... saare childrens

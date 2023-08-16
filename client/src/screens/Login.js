@@ -7,7 +7,7 @@ export default function Login() {
   let navigate = useNavigate()
     const handleSubmit = async(e)=>{
         e.preventDefault();
-        console.log(JSON.stringify({email:credentials.email, password:credentials.password}))
+        // console.log(JSON.stringify({email:credentials.email, password:credentials.password}))
         const response = await fetch("http://localhost:5000/api/loginuser",{
             method:'POST',
             headers:{
@@ -16,7 +16,7 @@ export default function Login() {
             body:JSON.stringify({email:credentials.email, password:credentials.password})
         });
         const json = await response.json()
-        console.log(json);
+        // console.log(json);
 
         if(!json.success){
             alert("Enter Valid Credentials")
@@ -25,7 +25,7 @@ export default function Login() {
         if(json.success){
           localStorage.setItem("userEmail",credentials.email);
           localStorage.setItem("authToken",json.authToken);
-          console.log(localStorage.getItem("authToken"))
+          // console.log(localStorage.getItem("authToken"))
           navigate("/")
       }
       else{
@@ -46,7 +46,7 @@ export default function Login() {
       </div>
       <div className='container'>
 
-        <form className='w-50 m-auto mt-5 border bg-dark border-success rounded' onSubmit={handleSubmit}>
+        <form className='w-50 m-auto mt-5' style={{backgroundColor: '#000',border:"none",outline:"none",padding:"25px",borderRadius: "20px" ,boxShadow:  "0 0 10px 5px #FFCE33,0 0 20px 7px rgb(131, 131, 40)"}} onSubmit={handleSubmit}>
 
         <div className="mb-3 mt-2 mx-3">
         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
@@ -58,8 +58,8 @@ export default function Login() {
         <input type="password" className="form-control" name='password' value= {credentials.password} onChange={onChange} id="exampleInputPassword1" />
         </div>
 
-        <button type="submit" className="m-3 btn btn-success mt-2">Submit</button>
-        <Link to="/createuser" className="m-3 btn btn-danger mt-2">I'm a new user</Link>
+        <button type="submit" className="m-3 btn mt-2" style={{backgroundColor:"#046007",fontWeight:"bold"}}>Submit</button>
+        <Link to="/createuser" className="m-3 btn mt-2" style={{backgroundColor:"#CB0809",fontWeight:"bold"}}>I'm a new user</Link>
         </form>
       </div>
     </div>
