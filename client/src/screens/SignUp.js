@@ -21,7 +21,7 @@ export default function () {
     //     location: credentials.geolocation,
     //   })
     // );
-    const response = await fetch("http://localhost:5000/api/createuser", {
+    const response = await fetch("https://seven-spices-backend.onrender.com/api/createuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
